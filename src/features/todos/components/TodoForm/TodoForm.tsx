@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { SvgIcon } from '../SvgIcon';
+import { todosTestIdVocabulary } from '../../todosTestIdVocabulary';
 import styles from './TodoForm.module.scss';
 import { TodoContract } from '~/contracts/contracts';
 import saveIcon from '~/assets/saveIcon.svg';
@@ -11,9 +12,10 @@ export interface TodoFormPropsContract {
   onCancel?: () => void;
   disabled: boolean;
   placeholder: string;
+  dataTestId: string;
 }
 
-export function TodoForm({ onCancel, onSubmit, text, disabled, placeholder }: TodoFormPropsContract) {
+export function TodoForm({ onCancel, onSubmit, text, disabled, placeholder, dataTestId }: TodoFormPropsContract) {
   const [value, setValue] = useState(text);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,7 +26,7 @@ export function TodoForm({ onCancel, onSubmit, text, disabled, placeholder }: To
   };
 
   return (
-    <form className={styles.TodoForm} onSubmit={handleFormSubmit}>
+    <form className={styles.TodoForm} onSubmit={handleFormSubmit} data-testid={dataTestId}>
       <input
         type="text"
         value={value}
@@ -33,14 +35,26 @@ export function TodoForm({ onCancel, onSubmit, text, disabled, placeholder }: To
         readOnly={disabled}
         placeholder={placeholder}
         onChange={(e) => setValue(e.target.value)}
+        data-testid={todosTestIdVocabulary.todoFormInput}
       />
 
       <div className={styles.actionButtonsWrapper}>
-        <button className={styles.actionButton} type={'submit'} disabled={disabled}>
+        <button
+          className={styles.actionButton}
+          type={'submit'}
+          disabled={disabled}
+          data-testid={todosTestIdVocabulary.todoFormSaveBtn}
+        >
           <SvgIcon src={saveIcon} />
         </button>
         {Boolean(onCancel) && (
-          <button className={styles.actionButton} type={'button'} onClick={onCancel} disabled={disabled}>
+          <button
+            className={styles.actionButton}
+            type={'button'}
+            onClick={onCancel}
+            disabled={disabled}
+            data-testid={todosTestIdVocabulary.todoFormCancelBtn}
+          >
             <SvgIcon src={exitIcon} />
           </button>
         )}

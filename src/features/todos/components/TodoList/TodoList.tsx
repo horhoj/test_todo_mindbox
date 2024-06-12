@@ -1,3 +1,4 @@
+import { todosTestIdVocabulary } from '../../todosTestIdVocabulary';
 import { TodoForm } from '../TodoForm';
 import { TodoView } from '../TodoView';
 import styles from './TodoList.module.scss';
@@ -51,10 +52,11 @@ export function TodoList({
           text={''}
           onSubmit={handleAdd}
           key={addFormRerenderCounter}
+          dataTestId={todosTestIdVocabulary.todoListAddForm}
         />
       </div>
-      {todoList.map((todo) => (
-        <li key={todo.id} className={styles.listItem}>
+      {todoList.map((todo, index) => (
+        <li key={todo.id} className={styles.listItem} data-testid={todosTestIdVocabulary.todoListItemTemplate(index)}>
           {editId !== todo.id && (
             <TodoView
               isDone={todo.isDone}
@@ -72,6 +74,7 @@ export function TodoList({
               text={todo.text}
               disabled={disabled}
               placeholder={PLACEHOLDER}
+              dataTestId={todosTestIdVocabulary.todoListEditForm}
             />
           )}
         </li>
