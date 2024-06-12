@@ -14,5 +14,10 @@ export default defineConfig({
       // provider: 'istanbul',
       provider: 'v8',
     },
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped',
+      },
+    },
   },
 });

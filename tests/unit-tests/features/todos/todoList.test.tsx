@@ -5,6 +5,54 @@ import { TodoList } from '~/features/todos/components/TodoList';
 import { todosTestIdVocabulary } from '~/features/todos/todosTestIdVocabulary';
 
 describe('тесты для компонента todoList', () => {
+  test('проверим функционал при пропе disabled===true', () => {
+    const todoList: TodoContract[] = [];
+    // мокаем колбеки
+    const onAdd = vi.fn();
+    const onDelete = vi.fn();
+    const onPatch = vi.fn();
+    const setEditId = vi.fn();
+    // рендерим
+    render(
+      <TodoList
+        todoList={todoList}
+        onAdd={onAdd}
+        disabled={true}
+        editId={null}
+        addFormRerenderCounter={0}
+        onDelete={onDelete}
+        onPatch={onPatch}
+        setEditId={setEditId}
+      />,
+    );
+    const todoListWrapper = screen.getByTestId(todosTestIdVocabulary.todoListWrapper);
+    expect(todoListWrapper).toHaveClass('disabled');
+  });
+
+  test('проверим функционал при пропе disabled===false', () => {
+    const todoList: TodoContract[] = [];
+    // мокаем колбеки
+    const onAdd = vi.fn();
+    const onDelete = vi.fn();
+    const onPatch = vi.fn();
+    const setEditId = vi.fn();
+    // рендерим
+    render(
+      <TodoList
+        todoList={todoList}
+        onAdd={onAdd}
+        disabled={false}
+        editId={null}
+        addFormRerenderCounter={0}
+        onDelete={onDelete}
+        onPatch={onPatch}
+        setEditId={setEditId}
+      />,
+    );
+    const todoListWrapper = screen.getByTestId(todosTestIdVocabulary.todoListWrapper);
+    expect(todoListWrapper).not.toHaveClass('disabled');
+  });
+
   test('проверим сценарий добавления нового туду', () => {
     const todoList: TodoContract[] = [];
     // мокаем колбеки

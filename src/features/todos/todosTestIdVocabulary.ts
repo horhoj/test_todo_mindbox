@@ -1,4 +1,5 @@
 export const todosTestIdVocabulary = {
+  todoListWrapper: 'todo-list-wrapper',
   todoListAddForm: 'todo-list-add-form',
   todoListEditForm: 'todo-list-edit-form',
   todoView: 'todo-view',

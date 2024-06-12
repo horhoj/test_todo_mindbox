@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { todosTestIdVocabulary } from '../../todosTestIdVocabulary';
 import { TodoForm } from './TodoForm';
 import { TodoView } from './TodoView';
@@ -43,7 +44,10 @@ export function TodoList({
   };
 
   return (
-    <div className={styles.TodoList}>
+    <div
+      className={classNames(styles.TodoList, disabled && styles.disabled)}
+      data-testid={todosTestIdVocabulary.todoListWrapper}
+    >
       <div className={styles.listItem}>{children}</div>
       <div className={styles.listItem}>
         <TodoForm
