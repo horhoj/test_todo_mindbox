@@ -1,0 +1,22 @@
+.TodoManager {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.activeStatus {
+
+  border: 2px solid green !important;
+  
+}
+
+.TodoManagerButton {
+  border: 2px solid #fff;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

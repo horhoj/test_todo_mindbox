@@ -26,7 +26,7 @@ test.each([1, 22])('addTodo должен быть выполнен коррек�
   expect(getUniqueId).toHaveBeenCalledTimes(1);
   expect(makeDelay).toHaveBeenCalledTimes(1);
   expect(saveStore).toHaveBeenCalledTimes(1);
-  expect(store).toEqual([...makeDefaultTestStore(n), makeTodo(n, true)]);
+  expect(store).toEqual([makeTodo(n, true), ...makeDefaultTestStore(n)]);
 });
 
 test.each([1, 22])('fetchTodo должен вернуть все элементы', async (n) => {

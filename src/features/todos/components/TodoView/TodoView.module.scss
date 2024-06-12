@@ -1,0 +1,57 @@
+.TodoView {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.actionButtonsWrapper {
+  display: flex;
+  // gap: 10px;
+  align-items: center;
+}
+
+.actionButton {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+
+  
+}
+
+.activeStatusButton {
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50%;
+  border: 2px solid green;
+  cursor: pointer;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoDataWrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.editWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.textTodoIsDone {
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.text {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}

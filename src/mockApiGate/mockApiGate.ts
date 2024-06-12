@@ -31,7 +31,7 @@ export class MockApiGate implements MockApiGateContract {
     await this.dependencies.makeDelay();
 
     const id = this.dependencies.getUniqueId();
-    this.dependencies.store.push({
+    this.dependencies.store.unshift({
       id,
       ...params.todoBody,
     });

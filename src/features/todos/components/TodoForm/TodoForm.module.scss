@@ -1,0 +1,39 @@
+.TodoForm {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 5px 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.actionButtonsWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.actionButton {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+}
+
+.todoDataWrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.editWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
