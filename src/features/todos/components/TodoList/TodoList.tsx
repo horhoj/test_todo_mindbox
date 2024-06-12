@@ -1,6 +1,6 @@
 import { todosTestIdVocabulary } from '../../todosTestIdVocabulary';
-import { TodoForm } from '../TodoForm';
-import { TodoView } from '../TodoView';
+import { TodoForm } from './TodoForm';
+import { TodoView } from './TodoView';
 import styles from './TodoList.module.scss';
 import { EntityIdContract, TodoBodyContract, TodoContract } from '~/contracts/contracts';
 

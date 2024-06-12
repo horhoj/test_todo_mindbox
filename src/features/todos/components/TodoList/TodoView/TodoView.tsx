@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { SvgIcon } from '../SvgIcon';
-import { todosTestIdVocabulary } from '../../todosTestIdVocabulary';
+import { todosTestIdVocabulary } from '../../../todosTestIdVocabulary';
 import styles from './TodoView.module.scss';
 import { TodoContract } from '~/contracts/contracts';
 import checkmarkIcon from '~/assets/checkmarkIcon.svg';
