@@ -4,7 +4,7 @@ import { getUUID } from '~/utils/getUUID';
 import { delay } from '~/utils/delay';
 
 export const mockApiGate = new MockApiGate({
-  makeDelay: () => delay(300),
+  makeDelay: () => delay(150),
   getUniqueId: () => getUUID(),
   store: mockApiStore,
   saveStore: () => mockApiStoreSaveToLS(),
